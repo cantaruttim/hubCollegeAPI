@@ -7,6 +7,7 @@ namespace HubCollege.model
 {
     public class FormsActivity
     {
+        public int Id { get; set; }
         public string registrationNumber { get; set; }
         public string name { get; set; }
 

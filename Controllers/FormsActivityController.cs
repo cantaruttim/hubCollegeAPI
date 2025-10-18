@@ -48,13 +48,13 @@ namespace HubCollege.Controllers
             if (model == null)
                 return BadRequest("The data must not be null");
 
-            // adiciona o registro
+            // add data
             await _appDbContext.FormsActivities.AddAsync(model);
 
-            // salva no banco
+            // commit data on db
             await _appDbContext.SaveChangesAsync();
 
-            // retorna 201 Created
+            // return 201 if Created
             return CreatedAtAction(nameof(GetById), new { id = model.Id }, model);
         }
     }

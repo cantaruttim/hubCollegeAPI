@@ -46,7 +46,7 @@ namespace HubCollege.Controllers
         public async Task<IActionResult> Create([FromBody] FormsActivity model)
         {
             if (model == null)
-                return BadRequest("O objeto enviado está nulo.");
+                return BadRequest("The data must not be null");
 
             // adiciona o registro
             await _appDbContext.FormsActivities.AddAsync(model);

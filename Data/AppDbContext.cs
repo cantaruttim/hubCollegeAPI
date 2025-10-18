@@ -12,7 +12,7 @@ namespace HubCollege.Data
         // contructor of DbContext
         public AppDbContext(DbContextOptions options) : base(options) { }
 
-        public DbSet<FormsActivity> college { get; set; }
+        public DbSet<FormsActivity> FormsActivities { get; set; }
 
     }
 }

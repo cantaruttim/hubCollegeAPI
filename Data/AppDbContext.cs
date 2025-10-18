@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HubCollege.model;
 using Microsoft.EntityFrameworkCore;
 
 namespace HubCollege.Data
@@ -10,6 +11,8 @@ namespace HubCollege.Data
     {
         // contructor of DbContext
         public AppDbContext(DbContextOptions options) : base(options) { }
-    
+
+        public DbSet<FormsActivity> college { get; set; }
+
     }
 }

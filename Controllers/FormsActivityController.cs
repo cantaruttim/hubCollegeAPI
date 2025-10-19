@@ -71,7 +71,7 @@ namespace HubCollege.Controllers
         }
 
         //==============================
-        //
+        //PUT: api/formsactivity/{id}
         //==============================
         [HttpPut("id")]
         public async Task<IActionResult> UpdtadeForms(int id, [FromBody] FormsActivity updatedActivity)
@@ -87,6 +87,22 @@ namespace HubCollege.Controllers
             await _appDbContext.SaveChangesAsync();
 
             return StatusCode(201, activity);
+        }
+
+        [HttpDelete("id")]
+        public async Task<IActionResult> DeleteForms(int id)
+        {
+
+            var activity = await _appDbContext.FormsActivities.FindAsync(id);
+            if (activity == null)
+            {
+                return NotFound("Forms Not Found!");
+            }
+
+            _appDbContext.FormsActivities.Remove(activity);
+            await _appDbContext.SaveChangesAsync();
+
+            return Ok("Forms deleted successufully!");
         }
     }
 }

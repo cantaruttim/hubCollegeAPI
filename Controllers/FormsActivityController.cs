@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using HubCollege.Data;
 using HubCollege.model;
 using Microsoft.AspNetCore.Mvc;

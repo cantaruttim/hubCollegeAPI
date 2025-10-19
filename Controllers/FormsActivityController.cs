@@ -48,7 +48,7 @@ namespace HubCollege.Controllers
             if (activity == null)
                 return NotFound();
 
-            return Ok(activity);
+            return StatusCode(200, activity);
         }
 
         // ==============================
@@ -68,6 +68,25 @@ namespace HubCollege.Controllers
 
             // return 201 Created
             return CreatedAtAction(nameof(GetById), new { id = model.Id }, model);
+        }
+
+        //==============================
+        //
+        //==============================
+        [HttpPut("id")]
+        public async Task<IActionResult> UpdtadeForms(int id, [FromBody] FormsActivity updatedActivity)
+        {
+
+            var activity = await _appDbContext.FormsActivities.FindAsync(id);
+            if (activity == null)
+            {
+                return NotFound();
+            }
+
+            _appDbContext.Entry(activity).CurrentValues.SetValues(updatedActivity);
+            await _appDbContext.SaveChangesAsync();
+
+            return StatusCode(201, activity);
         }
     }
 }

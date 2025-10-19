@@ -31,9 +31,10 @@ namespace HubCollege.Controllers
         // GET: api/formsactivity/{id}
         // ==============================
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetById(string registrationNumber)
         {
-            var activity = await _appDbContext.FormsActivities.FindAsync(id);
+            var activity = await _appDbContext.FormsActivities.FindAsync(registrationNumber);
+            
             if (activity == null)
                 return NotFound();
             return Ok(activity);

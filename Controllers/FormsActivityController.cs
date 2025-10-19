@@ -89,6 +89,9 @@ namespace HubCollege.Controllers
             return StatusCode(201, activity);
         }
 
+        //==============================
+        //DELETE: api/formsactivity/{id}
+        //==============================
         [HttpDelete("id")]
         public async Task<IActionResult> DeleteForms(int id)
         {

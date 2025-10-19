@@ -30,15 +30,24 @@ namespace HubCollege.Controllers
         // ==============================
         // GET: api/formsactivity/{id}
         // ==============================
-        [HttpGet("{registrationNumber}")]
-        public async Task<IActionResult> GetById(string registrationNumber)
+        [HttpGet("id/{id:int}")]
+        public async Task<IActionResult> GetById(int id)
         {
-            var activity = await _appDbContext.FormsActivities.FirstOrDefaultAsync(
-                    a => a.registrationNumber == registrationNumber
-            );
-            
+            var activity = await _appDbContext.FormsActivities.FindAsync(id);
             if (activity == null)
                 return NotFound();
+            return Ok(activity);
+        }
+
+        [HttpGet("registration/{registrationNumber}")]
+        public async Task<IActionResult> GetByRegistrationNumber(string registrationNumber)
+        {
+            var activity = await _appDbContext.FormsActivities
+                .FirstOrDefaultAsync(a => a.registrationNumber == registrationNumber);
+
+            if (activity == null)
+                return NotFound();
+
             return Ok(activity);
         }
 
@@ -57,7 +66,7 @@ namespace HubCollege.Controllers
             // commit data on db
             await _appDbContext.SaveChangesAsync();
 
-            // return 201 if Created
+            // return 201 Created
             return CreatedAtAction(nameof(GetById), new { id = model.Id }, model);
         }
     }

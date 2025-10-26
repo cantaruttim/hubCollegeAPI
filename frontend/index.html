@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade - Módulo 3: Prática Ministerial</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fde7dc;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 70%;
+      background-color: white;
+      margin: 40px auto;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .header {
+      background-color: #1b1c5a;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .header h2 {
+      margin: 10px 0 0;
+      font-size: 1em;
+      color: #ffbb80;
+    }
+    .content {
+      padding: 20px 40px;
+    }
+    h3 {
+      color: #333;
+    }
+    p {
+      color: #555;
+      line-height: 1.5em;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      resize: vertical;
+    }
+    textarea {
+      min-height: 120px;
+    }
+    .required {
+      color: red;
+    }
+    .button-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* 🔹 separa o botão e o texto nas extremidades */
+      margin-top: 30px;
+    }
+    .submit-btn {
+      background-color: #d93025;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .submit-btn:hover {
+      background-color: #b1271f;
+    }
+    .clean-text {
+      color: #d93025;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .clean-text:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>Prática Ministerial</h1>
+      <h2>Pr. Diego Alves</h2>
+    </div>
+
+    <div class="content">
+      <h3>Atividade - Módulo 3: Prática Ministerial</h3>
+      <p>Graça e paz, Aluno(a)!</p>
+      <p>Segue a atividade de hoje, lembrando que a atividade vale 1 ponto e o link sairá do ar sempre no dia seguinte 19h.</p>
+      <p>No amor de Cristo Jesus,<br>ADAI College</p>
+
+      <form id="atividadeForm" action="#" method="POST">
+        <label>Email <span class="required">*</span></label>
+        <input type="email" name="email" required>
+
+        <label>Nome completo <span class="required">*</span></label>
+        <input type="text" name="nome" required>
+
+        <label>1 - O que mais te chamou atenção na aula de hoje? (Mínimo de 300 caracteres) <span class="required">*</span></label>
+        <textarea name="resposta1" minlength="300" required></textarea>
+
+        <label>2 - Qual passo prático você pode tomar a partir do conhecimento absorvido na aula de hoje? (Mínimo de 150 caracteres) <span class="required">*</span></label>
+        <textarea name="resposta2" minlength="150" required></textarea>
+
+        <div class="button-row">
+          <button type="submit" class="submit-btn">Enviar</button>
+          <span class="clean-text" onclick="document.getElementById('atividadeForm').reset();">clean forms</span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

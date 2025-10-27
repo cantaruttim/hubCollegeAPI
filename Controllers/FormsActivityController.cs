@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace HubCollege.Controllers
-{
+{   
     [ApiController]
     [Route("api/[controller]")]
     public class FormsActivityController : ControllerBase

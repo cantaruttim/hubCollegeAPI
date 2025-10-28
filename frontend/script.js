@@ -1,5 +1,4 @@
-console.log("Script loaded successfully.");
-
+const activityList = document.getElementById('activity-list');
 
 const fetchFActivityAPI = fetch(
     'http://localhost:5001/api/formsActivity',

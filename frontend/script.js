@@ -19,7 +19,7 @@ const getActivityList = async () => {
 
         const activities = await response.json();
 
-        activities.foreach( (activity) => {
+        activities.forEach( (activity) => {
             const newLi = document.createElement('li');
             newLi.innerText = `Student: ${activity.nome}`;
             activitiesList.appendChild(newLi);

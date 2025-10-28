@@ -1,7 +1,8 @@
 const activityList = document.getElementById('activity-list');
+const apiURL = 'http://localhost:5001/api/formsActivity';
 
 const fetchFActivityAPI = fetch(
-    'http://localhost:5001/api/formsActivity',
+    apiURL,
     {   
         method: 'GET', 
         headers: {

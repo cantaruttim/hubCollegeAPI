@@ -1,4 +1,4 @@
-const activityList = document.getElementById('activity-list');
+const activityList = document.querySelector('.activities-list');
 const apiURL = 'http://localhost:5001/api/formsActivity';
 
 
@@ -21,8 +21,8 @@ const getActivityList = async () => {
 
         activities.forEach( (activity) => {
             const newLi = document.createElement('li');
-            newLi.innerText = `Student: ${activity.nome}`;
-            activitiesList.appendChild(newLi);
+            newLi.innerText = `Student: ${activity.name}`;
+            activityList.appendChild(newLi);
         })
 
     } catch (error) {

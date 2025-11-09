@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <!-- <script defer src="./script.js"></script> -->
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
+
+      <form id="loginForm" action="#" method="POST">
+        
+        <label>Matrícula <span class="required">*</span></label>
+        <input type="text" name="matricula" required>
+
+        <label>Senha <span class="required">*</span></label>
+        <input type="password" name="senha" required>
+
+        <div class="button-row">
+          <button type="submit" class="submit-btn">Enviar</button>
+          <span class="clean-text" onclick="document.getElementById('loginForm').reset();">clean forms</span>
+        </div>
+      </form>
+
 </body>
 </html>

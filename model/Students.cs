@@ -1,7 +1,7 @@
 
 namespace HubCollege.model
 {
-    public class Teachers
+    public class Students
     {
         
     }

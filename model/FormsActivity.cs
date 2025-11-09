@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace HubCollege.model
 {
@@ -20,8 +16,10 @@ namespace HubCollege.model
         [Required(ErrorMessage = "Email is Required")]
         public string email { get; set; }
 
+        [Required(ErrorMessage = "Question One is Required")]
         public string questionOne { get; set; }
-
+        
+        [Required(ErrorMessage = "Question Two is Required")]
         public string questionTwo { get; set; }
 
     }

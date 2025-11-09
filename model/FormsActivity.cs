@@ -5,7 +5,7 @@ namespace HubCollege.model
     public class FormsActivity
     {
         [Key]
-        public int FormsActivityId { get; set; }
+        public int Id { get; set; }
         
         [Required(ErrorMessage = "registrationNumber is Required")]
         public string registrationNumber { get; set; }

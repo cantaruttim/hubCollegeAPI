@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using HubCollege.model;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,5 +11,11 @@ namespace HubCollege.Data
 
         public DbSet<FormsActivity> FormsActivities { get; set; }
         public DbSet<Login> Logins { get; set; }
+        public DbSet<Students> Students { get; set; }
+        public DbSet<Courses> Courses { get; set; }
+        public DbSet<Modules> Modules { get; set; }
+        public DbSet<Teachers> Teachers { get; set; }
+        public DbSet<model.Interfaces.IGrades> Grades { get; set; }
+
     }
 }

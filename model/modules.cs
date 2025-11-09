@@ -3,7 +3,7 @@ namespace HubCollege.model
 {
     public class Modules : Teachers
     {
-        public int Id { get; set; }
+        public int ModulesId { get; set; }
         public string ModuleName { get; set; }
         public string ModuleDuration { get; set; }
         public string ModuleAbbreviation { get; set; }

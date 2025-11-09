@@ -1,7 +1,7 @@
 const activityList = document.querySelector('.activities-list');
 const apiURL = 'http://localhost:5001/api/formsActivity';
 
-
+// get student information from backend
 const getActivityList = async () => {
     try {
         const response = await fetch(

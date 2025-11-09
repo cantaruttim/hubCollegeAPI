@@ -13,6 +13,6 @@ namespace HubCollege.Data
         public AppDbContext(DbContextOptions options) : base(options) { }
 
         public DbSet<FormsActivity> FormsActivities { get; set; }
-
+        public DbSet<Login> Logins { get; set; }
     }
 }

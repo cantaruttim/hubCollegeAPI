@@ -1,7 +1,7 @@
 
 namespace HubCollege.model.Interfaces
 {
-    public interface Grades
+    public interface IGrades
     {
         public int somaAtividades()
         {

@@ -1,7 +1,7 @@
 
 namespace HubCollege.model
 {
-    public class Students : Interfaces.Grades
+    public class Students : Interfaces.IGrades
     {
         
     }

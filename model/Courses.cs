@@ -1,7 +1,7 @@
 
 namespace HubCollege.model
 {
-    public class Courses : Teachers
+    public class Courses
     {
 
         public int CoursesId { get; set; }

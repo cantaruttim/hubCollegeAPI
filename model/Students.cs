@@ -1,7 +1,7 @@
 
 namespace HubCollege.model
 {
-    public class Students : FormsActivity, Interfaces.IGrades
+    public class Students : Interfaces.IGrades
     {
 
         public string StudentRegistration { get; set; }

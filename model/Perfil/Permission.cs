@@ -1,4 +1,11 @@
 
+public enum PermissionLevel
+{
+    Adm,
+    User,
+    Teacher
+}
+
 namespace HubCollege.model.Perfil
 {
     public class Permission
@@ -6,7 +13,8 @@ namespace HubCollege.model.Perfil
 
         public int Id { get; set; }
         public string PermissionName { get; set; } // Adm, User or Teacher
-        public string Description { get; set; } // Role
-        
+
+        public PermissionLevel PermissionType { get; set; }
+
     }
 }

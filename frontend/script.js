@@ -30,4 +30,7 @@ const getActivityList = async () => {
     }
 }
 
+
+
+
 getActivityList();

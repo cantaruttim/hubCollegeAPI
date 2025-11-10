@@ -61,6 +61,30 @@ namespace HubCollege.Controllers
             return CreatedAtAction(nameof(GetById), new { id = model.Id }, model);
         }
 
+        [HttpPost("auth")] 
+        /* POST /api/login
+            Valida Login do Usuário
+        */
+        public async Task<IActionResult> Login([FromBody] Login login)
+        {
+            if (login == null || string.IsNullOrEmpty(login.RegistrationNumber) || string.IsNullOrEmpty(login.Password))
+                return BadRequest(new { error = "Dados inválidos" });
+
+            var user = await _appDbContext.Logins
+                .FirstOrDefaultAsync(u => u.RegistrationNumber == login.RegistrationNumber 
+                                    && u.Password == login.Password);
+
+            if (user == null)
+                return Unauthorized(new { error = "Usuário ou senha incorretos" });
+
+            return Ok(new 
+            { 
+                message = "Login bem-sucedido!", 
+                user = new { user.Id, user.RegistrationNumber } 
+            });
+        }
+
+
         [HttpPut("id")]
         public async Task<IActionResult> UpdtadeForms(int id, [FromBody] Login updatedLogin)
         {

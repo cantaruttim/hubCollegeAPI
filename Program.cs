@@ -1,44 +1,49 @@
 using HubCollege.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCors(
-    options =>
+// ===== CORS =====
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
     {
-        options.AddDefaultPolicy(policy => 
-        {
-            policy.AllowAnyOrigin()
-                  .AllowAnyHeader()
-                  .AllowAnyMethod();
-        });
-    }
-);
-// Add services to the container.
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
+// ===== Controllers =====
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
 
-// adding connection string
-var connectionString = builder.Configuration.GetConnectionString("AppDbConnectionString");
-builder.Services.AddDbContext<AppDbContext>(
-    options => options.UseMySql(
-    connectionString,
-    ServerVersion.AutoDetect(connectionString)
-    )
-);
-
-// Swagger
+// ===== Swagger =====
 builder.Services.AddEndpointsApiExplorer();
-
 builder.Services.AddSwaggerGen();
+
+// ===== EF Core (MySQL) =====
+var connectionString = builder.Configuration.GetConnectionString("AppDbConnectionString");
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
+);
 
 var app = builder.Build();
 
+// ===== Middleware =====
 app.UseCors();
 
-// Configure the HTTP request pipeline.
+app.UseStaticFiles(); // Habilita arquivos estáticos (wwwroot)
+app.UseFileServer(new FileServerOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "frontend") // pasta do frontend
+    ),
+    RequestPath = "/frontend",
+    EnableDefaultFiles = true
+});
+
+// ===== Swagger (apenas dev) =====
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -46,7 +51,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();

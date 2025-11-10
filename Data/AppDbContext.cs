@@ -15,7 +15,6 @@ namespace HubCollege.Data
         public DbSet<Courses> Courses { get; set; }
         public DbSet<Modules> Modules { get; set; }
         public DbSet<Teachers> Teachers { get; set; }
-        public DbSet<model.Interfaces.IGrades> Grades { get; set; }
 
     }
 }

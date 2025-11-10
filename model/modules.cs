@@ -7,7 +7,7 @@ namespace HubCollege.model
         public string ModuleName { get; set; }
         public string ModuleDuration { get; set; }
         public string ModuleAbbreviation { get; set; }
-        public int QuantityClasses { get; set; }
+        public int ClassesQuantity { get; set; }
         public Teachers TeacherId { get; set; }
 
         public Modules() { }
@@ -16,14 +16,14 @@ namespace HubCollege.model
             string moduleName,
             string moduleDuration,
             string moduleAbbreviation,
-            int quantityClasses,
+            int classesQuantity,
             Teachers teacherId
         )
         {
             ModuleName = moduleName;
             ModuleDuration = moduleDuration;
             ModuleAbbreviation = moduleAbbreviation;
-            QuantityClasses = quantityClasses;
+            ClassesQuantity = classesQuantity;
             TeacherId = teacherId;
         }
 

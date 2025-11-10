@@ -1,4 +1,3 @@
-
 namespace HubCollege.model
 {
     public class Teachers
@@ -9,7 +8,6 @@ namespace HubCollege.model
         public string TeacherEmail { get; set; }
         public string TeacherRegistrationNumber { get; set; }
         public string TeacherCourseAt { get; set; }
-
         public string TeacherModules { get; set; }
 
         public Teachers() { }

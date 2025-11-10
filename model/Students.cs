@@ -1,3 +1,4 @@
+using System.Reflection;
 using HubCollege.model.Perfil;
 
 namespace HubCollege.model
@@ -8,11 +9,37 @@ namespace HubCollege.model
         public string StudentName { get; set; }
         public string StudentPhone { get; set; }
         public string StudentCourse { get; set; }
+        public Modules ModuleName { get; set; }
         public Permission PermissionLevel { get; set; }
         public DateTime StartAt { get; set; }
         public DateTime EndAt { get; set; }
 
         public Students() { }
+
+        public Students(
+            string studentRegistration,
+            string studentName,
+            string studentPhone,
+            string studentCourse,
+            string permissionLevel,
+            Modules moduleName,
+            DateTime startAt,
+            DateTime endAt
+        )
+        {
+            StudentRegistration = studentRegistration;
+            StudentName = studentName;
+            StudentPhone = studentPhone;
+            StudentCourse = studentCourse;
+            ModuleName = moduleName;
+            PermissionLevel = new Permission
+            {
+                PermissionName = permissionLevel
+            };
+            StartAt = startAt;
+            EndAt = endAt;
+        }
+
 
         public Students(
             string studentRegistration,

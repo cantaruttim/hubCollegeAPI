@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HubCollege")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6fcffc6ca827daccb2e00ba74e8d65d9cda6345")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f940e63378972ae92155898f5afffe035902e7fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("HubCollege")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HubCollege")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
